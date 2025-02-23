@@ -1,0 +1,212 @@
+/* Global Reset */
+* {
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Container */
+  .intro-container {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navigation Bar */
+  .navbar {
+    height: 80px;
+    width: 100%;
+    background-color: #1e3a8a;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 80px;
+    box-sizing: border-box;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .navbar-logo-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navbar-logo {
+    height: 56px;
+  }
+  
+  .navbar-button {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 16px;
+    width: 120px;
+    height: 50px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-button:hover {
+    border-width: 4px;
+    background-color: #fff;
+    color: #1e3a8a;
+  }
+  
+  .navbar-login {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+  
+  .login-button {
+    background-color: #fff;
+    color: #1e3a8a;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #e5e5e5;
+  }
+  
+  /* 
+    Hero image removed 
+    (Remove or comment out any HTML referencing .hero-image / .hero-overlay)
+  */
+  
+  /* Tabs Container (centered with shadow) */
+  .tabs-container {
+    max-width: 900px;
+    margin: 50px auto;         /* Centers the container and adds spacing from the top */
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);  /* Subtle shadow */
+    padding: 24px;
+    box-sizing: border-box;
+  }
+  
+  .tabs-content {
+    /* .tabs-container already has background and padding;
+       you can keep this empty or use it if you want additional styling */
+  }
+  
+  /* Tabs List */
+  .tabs-list {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+  }
+  
+  .tab-item {
+    margin-right: 16px;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease;
+  }
+  
+  .tab-item:hover {
+    color: #1e3a8a;
+  }
+  
+  .tab-link {
+    display: inline-block;
+    padding: 8px 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .tab-item.active {
+    color: #1e3a8a;
+    border-bottom: 2px solid #1e3a8a;
+  }
+  
+  .tab-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: #1e3a8a;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  /* Forms */
+  .tabs-forms {
+    margin-top: 16px;
+  }
+  
+  .form-section {
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 25px;
+  }
+  
+  /* Layout for form fields */
+  .form-row {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  
+  .form-group {
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    color: #1e3a8a;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  
+  .form-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+    font-size: 14px;
+  }
+  
+  .small-input {
+    width: 200px;
+  }
+  
+  .form-center {
+    text-align: center;
+  }
+  
+  .form-button {
+    background-color: #1e3a8a;
+    color: #fff;
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+  }
+  
+  .form-button:hover {
+    background-color: #fff;
+    color: #1e3a8a;
+    border: 2px solid #1e3a8a;
+  }
+  
