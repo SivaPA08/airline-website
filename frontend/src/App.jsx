@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Intro from "../pages/intro";
 import FlightInfo from "../pages/flightinfo";
 import Login from "../pages/login";
-
+import Mybooking from "../pages/mybooking";
 export default function App() {
   return (
     <Router>
@@ -11,6 +11,7 @@ export default function App() {
         <Route path="/" element={<Intro />} />
         <Route path="/flightinfo" element={<FlightInfo />} />
         <Route path="/login" element={ <Login/>}/>
+        <Route path="/mybooking" element={ <Mybooking/> }/>
       </Routes>
     </Router>
   );
