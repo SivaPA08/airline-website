@@ -1,9 +1,17 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Intro from "../pages/intro";
-export default function App () {
+import FlightInfo from "../pages/flightinfo";
+import Login from "../pages/login";
+
+export default function App() {
   return (
-    <div>
-      <Intro></Intro>
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Intro />} />
+        <Route path="/flightinfo" element={<FlightInfo />} />
+        <Route path="/login" element={ <Login/>}/>
+      </Routes>
+    </Router>
+  );
 }

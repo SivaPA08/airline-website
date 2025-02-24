@@ -94,10 +94,7 @@
     box-sizing: border-box;
   }
   
-  .tabs-content {
-    /* .tabs-container already has background and padding;
-       you can keep this empty or use it if you want additional styling */
-  }
+
   
   /* Tabs List */
   .tabs-list {
