@@ -8,11 +8,17 @@ import sqlite3
 
 @csrf_exempt
 def Login(request):
+    if(request=='POST'):
+        #logic for login
+        pass
     pass
 
 
 @csrf_exempt
 def Register(request):
+    if(request=='POST'):
+        #logic for register
+        pass
     pass
 
 
