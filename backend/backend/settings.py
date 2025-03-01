@@ -55,7 +55,7 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS=[
-    #url request from react
+    'http://localhost:5173'
 ]
 CORS_ORIGIN_ALLOW_ALL = True
 
