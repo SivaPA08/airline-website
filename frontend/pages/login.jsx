@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./css/login.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = ({ onSwitch }) => {
   const [msg, setMsg] = useState("");
+  const navigate = useNavigate();
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
@@ -11,9 +13,20 @@ const LoginForm = ({ onSwitch }) => {
     const password = e.target.password.value;
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/api/login/", { email, password });
+      const res = await axios.post(
+        "http://127.0.0.1:8000/api/login/",
+        { email, password }
+        // No need for withCredentials if you're using JWTs stored in localStorage
+      );
+
+      if (res.data.success) {
+        // Store the JWT token in localStorage for later requests
+        localStorage.setItem("token", res.data.token);
+        navigate("/dashboard");
+      }
       setMsg(res.data.message);
     } catch (err) {
+      console.error(err);
       setMsg("Error logging in");
     }
   };
@@ -48,9 +61,14 @@ const RegisterForm = ({ onSwitch }) => {
     }
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/api/register/", { fullname, email, password });
+      const res = await axios.post("http://127.0.0.1:8000/api/register/", {
+        fullname,
+        email,
+        password,
+      });
       setMsg(res.data.message);
     } catch (err) {
+      console.error(err);
       setMsg("Error registering");
     }
   };
@@ -62,7 +80,12 @@ const RegisterForm = ({ onSwitch }) => {
         <input type="text" placeholder="Full Name" name="fullname" required />
         <input type="email" placeholder="Email" name="email" required />
         <input type="password" placeholder="Password" name="password" required />
-        <input type="password" placeholder="Confirm Password" name="confirmPassword" required />
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          name="confirmPassword"
+          required
+        />
         <button type="submit">Register</button>
       </form>
       {msg && <p className="message">{msg}</p>}
@@ -80,7 +103,11 @@ export default function Login() {
 
   return (
     <div className="container">
-      {isRegister ? <RegisterForm onSwitch={toggleForm} /> : <LoginForm onSwitch={toggleForm} />}
+      {isRegister ? (
+        <RegisterForm onSwitch={toggleForm} />
+      ) : (
+        <LoginForm onSwitch={toggleForm} />
+      )}
     </div>
   );
 }
