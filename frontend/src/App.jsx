@@ -5,6 +5,7 @@ import FlightInfo from "../pages/flightinfo";
 import Login from "../pages/login";
 import Mybooking from "../pages/mybooking";
 import Payment from "../pages/payment";
+import Dash from "../pages/dashboard";
 export default function App() {
   return (
     <Router>
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/login" element={ <Login/>}/>
         <Route path="/mybooking" element={ <Mybooking/> }/>
         <Route path="/payment" element={ <Payment/>}/>
+        <Route path="/dashboard" element={<Dash/>} />
       </Routes>
     </Router>
   );
